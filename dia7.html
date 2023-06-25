@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia 7</title>
+  <style>
+      body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #9088fa;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #9b9191;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+
+    input {
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #9088fa;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #9088fa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+  </style>
+  <script>
+    function soma() {
+      const num1 = parseFloat(prompt("Digite o primeiro número:"));
+      const num2 = parseFloat(prompt("Digite o segundo número:"));
+      const resultado = num1 + num2;
+      alert(`O resultado da soma é: ${resultado}`);
+    }
+
+    function subtracao() {
+      const num1 = parseFloat(prompt("Digite o primeiro número:"));
+      const num2 = parseFloat(prompt("Digite o segundo número:"));
+      const resultado = num1 - num2;
+      alert(`O resultado da subtração é: ${resultado}`);
+    }
+
+    function multiplicacao() {
+      const num1 = parseFloat(prompt("Digite o primeiro número:"));
+      const num2 = parseFloat(prompt("Digite o segundo número:"));
+      const resultado = num1 * num2;
+      alert(`O resultado da multiplicação é: ${resultado}`);
+    }
+
+    function divisao() {
+      const num1 = parseFloat(prompt("Digite o primeiro número:"));
+      const num2 = parseFloat(prompt("Digite o segundo número:"));
+      const resultado = num1 / num2;
+      alert(`O resultado da divisão é: ${resultado}`);
+    }
+
+    function sair() {
+      alert("Até a próxima!!");
+      // Encerra o programa
+    }
+
+    function executarOperacao() {
+      const operacao = document.getElementById("operacao").value;
+
+      switch (operacao) {
+        case "soma":
+          soma();
+          break;
+        case "subtracao":
+          subtracao();
+          break;
+        case "multiplicacao":
+          multiplicacao();
+          break;
+        case "divisao":
+          divisao();
+          break;
+        case "sair":
+          sair();
+          break;
+        default:
+          alert("Opção inválida!");
+      }
+    }
+  </script>
+</head>
+
+<body>
+    <button class="back-button" onclick="window.location.href = 'index.html';">Voltar</button>
+  <div class="container">
+    <h1>Calculadora</h1>
+    <label>
+      Escolha qual operação você quer executar:
+      <select id="operacao">
+        <option value="soma">Soma</option>
+        <option value="subtracao">Subtração</option>
+        <option value="multiplicacao">Multiplicação</option>
+        <option value="divisao">Divisão</option>
+        <option value="sair">Sair</option>
+      </select>
+    </label>
+    <button onclick="executarOperacao()">Executar</button>
+  </div>
+</body>
+</html>
